@@ -4,7 +4,7 @@ import axios from 'axios';
 import './App.css';
 import { setQuote, setLoading } from './redux/quoteReducer';
 
-const QUOTE_API_URL = 'https://api.quotable.io/random';
+const QUOTE_API_URL = 'http://api.quotable.io/random';
 
 function App() {
   const dispatch = useDispatch();
@@ -29,6 +29,8 @@ function App() {
 
   return (
     <div className="App">
+      <h1 className="app-title">Daily Inspirational Quote</h1>
+      <h2 className="app-subtitle">A little dose of inspiration to brighten your day</h2>
       <div id="quote-box" className="quote-box">
         {loading ? (
           <div>Carregando...</div>
