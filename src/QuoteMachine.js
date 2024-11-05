@@ -7,7 +7,7 @@ const QuoteMachine = () => {
 
     const fetchQuote = async () => {
         try {
-            const response = await axios.get('http://api.quotable.io/random');
+            const response = await axios.get('https://api.quotable.io/random');
             setQuote({ text: response.data.content, author: response.data.author });
         } catch (error) {
             console.error('Erro ao buscar citação:', error);
