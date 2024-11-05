@@ -1,17 +1,14 @@
-// src/QuoteMachine.js
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import quotes from './quotes.json'; // Importa o arquivo JSON
+import './QuoteMachine.css'; // Importa o arquivo CSS
 
 const QuoteMachine = () => {
     const [quote, setQuote] = useState({ text: '', author: '' });
 
-    const fetchQuote = async () => {
-        try {
-            const response = await axios.get('https://api.quotable.io/random');
-            setQuote({ text: response.data.content, author: response.data.author });
-        } catch (error) {
-            console.error('Erro ao buscar citação:', error);
-        }
+    const fetchQuote = () => {
+        const randomIndex = Math.floor(Math.random() * quotes.length);
+        const randomQuote = quotes[randomIndex];
+        setQuote(randomQuote);
     };
 
     useEffect(() => {
