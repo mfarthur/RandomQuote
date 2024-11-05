@@ -4,7 +4,7 @@ import axios from 'axios';
 import './App.css';
 import { setQuote, setLoading } from './redux/quoteReducer';
 
-const QUOTE_API_URL = 'http://api.quotable.io/random';
+const QUOTE_API_URL = 'https://api.quotable.io/random';
 
 function App() {
   const dispatch = useDispatch();
